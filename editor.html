@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+<head>
+    <title>Editor</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/30d30e2b4b.js" crossorigin="anonymous"></script>
+    <script type='text/javascript' src='tinycolor.js'></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="LayerClass.js"></script>
+    <script type="text/javascript" src="webm-writer-0.3.0.js"></script>
+    <!-- <script src="whammy.js"></script> -->
+
+</head>
+
+<body oncontextmenu="return false;">
+    <script src='spectrum.js'></script>
+    <link rel='stylesheet' href='spectrum.css' />
+
+
+    <div class="ui-main">
+        <div class="top-box">
+            <!-- <i class="fa-solid fa-dumpster-fire"></i> <i class="fa-regular fa-paper-plane"></i> <i class="fa-solid fa-bug"></i> <i class="fa-solid fa-dragon"></i> -->
+            <!-- <p>pixel forg</p> -->
+            <img class="logo" src="logo.png">
+            <button class ="export" onclick="makeVideo()">Export Video</button>
+            <a href="" download> download video </a>
+
+
+            <!-- <p>
+                width:<input type="number" class="dimInput" id="width" name="width" min="1" value="32" onchange="changeWidth()">
+                height: <input type="number" class="dimInput" id="height" name="height" min="1" value="32" onchange="changeHeight()">
+            </p> -->
+
+        </div>
+        
+        <div class="main-box">
+            
+            <!-- <video loop autoplay></video> -->
+            <!-- <canvas id="testcanvas"></canvas> -->
+           
+            <div class="left-box">
+                <div class="editor-main">
+
+                    <div class="toolbar">
+                        <script src="toolManager.js"></script>
+
+                        <p>  Tools </p>
+                        <div class="tool-buttons">
+                            <!-- <button class="tool" onclick="pointer()"> <i class="fa-solid fa-arrow-pointer"></i> </button> -->
+                            <button class="tool" onclick="pencil()"> <i class="icon fa-solid fa-pen"></i> </button>
+                            <button class="tool" onclick="eraser()"> <i class="icon fa-solid fa-eraser"></i> </button>
+                            <button class="tool" onclick="paintBucket()"> <i class="fa-solid fa-fill-drip"></i> </button>
+                            <button class="tool" onclick="eyeDropper()"> <i class="fa-solid fa-eye-dropper"></i> </button>
+                            
+                        </div>
+                    </div>
+
+                    <div id="render-window">
+                        <!-- <canvas id="renderer" width="800" height="500"></canvas> -->
+                        <div id="canvas-container" ></div>
+                        <script src="divtest.js"></script>
+
+                    </div>
+                </div>
+                
+
+                <div class="frame-box">
+                    <p>Frames 
+                        <button class="add-frame"><i class="fa-solid fa-plus"></i></button>
+                        <i class="fa-solid fa-backward" onclick="backward()"></i>
+                        <i class="fa-solid fa-play" onclick="play()" id="playbutton"></i>
+                        <i class="fa-solid fa-forward" onclick="forward()"></i>
+
+                        FPS: 
+                        <input type="number" id="fps" name="fps" min="1" step="1" value="1" onchange="updateFPS()">
+                    </p>
+
+                    <div class="frame-scroll">
+                        <div class="frame-num-container">
+                            <div class="frame-num-box">1</div>
+                        </div>
+                
+                        <div class="frame-container">
+                            <div id="frame1" class="frame">
+                                <!-- <p>1</p> -->
+                            </div>
+
+
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+
+            </div>
+            
+            <div class="right-box">
+
+                <div class="layer-box">
+                    <p>Layers <i class="fa-solid fa-layer-group"> </i> <button class="add-layer"><i class="fa-solid fa-plus"></i></button></p>
+                    
+                
+                    <div class="layer-container">
+                        <div id="layer1" class="layer">
+                            <button class="visibility"><i class="fa-regular fa-eye"></i></button>
+                            <div class="thumbnail-div"><canvas id="canvas1" class="layer-thumbnail"></canvas></div>
+                            <input class="layer-name" value="Layer 1"></input>
+                        </div>
+
+                    </div>
+                    <script src="layerManager.js"></script>
+                </div>
+
+
+
+                <div class="color-box">
+                    <p>Colors <i class="fa-solid fa-palette"></i></p>
+                    <div class="color-ui">
+                        <div class="color-selected">
+                            <div id="primColor" class="color-selection" onclick="primSelect()"></div>
+                            <div id="secColor" class="color-selection" onclick="secSelect()"></div>
+                        </div>
+                        
+                        <input type='text' id="color-picker" class="picker white-text" />
+                        <input type='text' id="palette" />
+                        <script src="colorManager.js"></script>
+                    </div>
+                   
+                    
+
+                </div>
+            </div>
+            
+            <!-- <canvas id="preview" width="64" height="64"></canvas> -->
+            
+        </div>
+        
+    </div>
+    
+    
+    
+    
+    
+    <script src="frameManager.js"></script>
+    <script src="exportManager.js"></script>
+
+</body>
+</html>

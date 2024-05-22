@@ -1,0 +1,28 @@
+body{
+    background-color: #abffce;
+    overflow:hidden;
+}
+.pixel{
+    background-color: #ffffff;
+    width: 2px;
+    height: 2px;
+}
+#render-window{
+    overflow: auto;
+    width: 75vmax;
+    height: 50vmin;
+    max-width: 75vmax;
+    max-height: 50vmin;
+    background-color: #bbbbbb;
+    
+}
+#canvas-container{
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #000000;
+    width: 128px;
+    height: 128px;
+    max-width: 100%;
+    max-height: 100%;
+}
