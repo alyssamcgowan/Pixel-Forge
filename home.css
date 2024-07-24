@@ -1,24 +1,56 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Raleway', sans-serif;
+    /* font-family: 'Raleway', sans-serif; */
+    font-family: "Tiny5", sans-serif;
+    /* font-family: "Press Start 2P", system-ui; */
+    /* font-size: 20px; */
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
-    overflow:auto;
+    background-color: #89919c;
+    max-width: 100%;
+    overflow-x: hidden;
 }
-    
 ::-webkit-scrollbar {
     display: none;
+}
+
+.header{
+    background-image: linear-gradient(#2b3b51 65%, #00000000);
+    margin: 0;
+    padding: 10px;
+    padding-bottom: 20px;
+    max-width: 100vw;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    color: #2b3b51;
+    overflow: hidden;
+}
+.textlogo{
+    height:50px;
+    width:auto;
+    image-rendering: pixelated; 
+}
+
+.footer{
+    background-color: #2b3b51;
+    width: 100%;
+    height: 50px;
+    padding: 10px;
 }
 
 .banner{
     width: 100%;
     height: 70vmin;
     background-color: #c5daff;
-    background: url("clouds6.png") no-repeat;
+    background: url("img/img-home/clouds6.png") no-repeat;
     background-size: 100% auto;
-    
+    image-rendering: pixelated; 
+    /* font-size: 10px; */
     display:flex;
     flex-direction: row;
     align-items: flex-end;
@@ -43,26 +75,39 @@ body {
 
 .main{
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 50vmin;
 }
 
-.openeditor{
+.buttonbox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.uibutton{
     border: solid 2px ;
-    border-color: #577398;
-    border-radius: 5px;
-    background-color: #00000000;
+    border-color: #57739800;
+    /* border-radius: 5px; */
+    background: #f5e5cb;
     width: auto;
     height: auto;
     font-size: 30px;
-    color: #577398;
+    color: #577398; 
+    font-family: "Tiny5", sans-serif;
+
+}
+.uibutton:hover{
+    /* border-color: #fff3d8; */
+    background: #fff3d8;
+    transition: background 0.1s ease-in-out;
+    /* color: #89919c;  */
 }
 
-.footer{
-    background-color: #577398;
-    width: 100%;
-    height: 30px;
+.headerbutton{
+    color: #2b3b51;
 }

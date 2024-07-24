@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Editor</title>
+    <link rel="icon" type="image/x-icon" href="img/img-home/logonew.png">
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -11,18 +13,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/30d30e2b4b.js" crossorigin="anonymous"></script>
-    <script type='text/javascript' src='tinycolor.js'></script>
+    <script type='text/javascript' src='js/tinycolor.js'></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <script src="LayerClass.js"></script>
-    <script type="text/javascript" src="webm-writer-0.3.0.js"></script>
+    <script src="js/LayerClass.js"></script>
+    <script type="text/javascript" src="js/webm-writer-0.3.0.js"></script>
     <!-- <script src="whammy.js"></script> -->
 
 </head>
 
 <body oncontextmenu="return false;">
-    <script src='spectrum.js'></script>
+    <script src='js/spectrum.js'></script>
     <link rel='stylesheet' href='spectrum.css' />
 
 
@@ -30,7 +32,7 @@
         <div class="top-box">
             <!-- <i class="fa-solid fa-dumpster-fire"></i> <i class="fa-regular fa-paper-plane"></i> <i class="fa-solid fa-bug"></i> <i class="fa-solid fa-dragon"></i> -->
             <!-- <p>pixel forg</p> -->
-            <img class="logo" src="logo.png">
+            <img class="logo" src="img/img-home/logowtext.png">
             <button class ="export" onclick="makeVideo()">Export Video</button>
             <a href="" download> download video </a>
 
@@ -51,7 +53,7 @@
                 <div class="editor-main">
 
                     <div class="toolbar">
-                        <script src="toolManager.js"></script>
+                        <script src="js/toolManager.js"></script>
 
                         <p>  Tools </p>
                         <div class="tool-buttons">
@@ -67,7 +69,7 @@
                     <div id="render-window">
                         <!-- <canvas id="renderer" width="800" height="500"></canvas> -->
                         <div id="canvas-container" ></div>
-                        <script src="divtest.js"></script>
+                        <script src="js/divtest.js"></script>
 
                     </div>
                 </div>
@@ -118,7 +120,7 @@
                         </div>
 
                     </div>
-                    <script src="layerManager.js"></script>
+                    <script src="js/layerManager.js"></script>
                 </div>
 
 
@@ -133,7 +135,7 @@
                         
                         <input type='text' id="color-picker" class="picker white-text" />
                         <input type='text' id="palette" />
-                        <script src="colorManager.js"></script>
+                        <script src="js/colorManager.js"></script>
                     </div>
                    
                     
@@ -151,8 +153,8 @@
     
     
     
-    <script src="frameManager.js"></script>
-    <script src="exportManager.js"></script>
+    <script src="js/frameManager.js"></script>
+    <script src="js/exportManager.js"></script>
 
 </body>
 </html>

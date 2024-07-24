@@ -98,7 +98,7 @@ body {
     display: grid;
     /* grid-gap: 0px; */
     grid-template-columns: repeat(64, 2px);
-    background-image: url("png.png");
+    background-image: url("img/img-editor/png.png");
     /* image-rendering: optimizeSpeed; */
     image-rendering: pixelated;  
 }
@@ -229,7 +229,7 @@ body {
     height: 50px;
     border: 2px solid #000;
     /* background-color: #fff; */
-    background-image: url('png.png');
+    background-image: url('img/img-editor/png.png');
     image-rendering: pixelated;
 }
 .layer-thumbnail{
@@ -251,9 +251,11 @@ body {
     border-radius: 5px;
 }
 .frame-container{
+    overflow: auto;
     display: flex;
     flex-direction: row;
     background-color: var(--dark2);
+    width: 100%;
 }
 .frame{
     border: 2px solid #000;
@@ -288,6 +290,7 @@ body {
     width: auto;
     padding-left: 10px;
     padding-right: 10px;
+    image-rendering: pixelated; 
 }
 
 #fps{
