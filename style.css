@@ -326,7 +326,7 @@ body {
     height: 100vh;
 }
 
-@media only screen and (max-device-width:480px) {
+/* @media only screen and (max-device-width:480px) {
     .mobilePopup { display: block; }
     .mobilePopupBG { display: block; }
-} 
+}  */
