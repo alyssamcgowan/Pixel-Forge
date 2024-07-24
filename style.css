@@ -9,6 +9,7 @@
 
 *{
     color: var(--text);
+    /* z-index: 0; */
 }
 
 body {
@@ -305,3 +306,27 @@ body {
 .white-text{
     color: #fff;
 }
+
+.mobilePopup{
+    display: none;
+    position: absolute;
+    top: 25vh;
+    left: 25vw;
+    background-color: #000000;
+    width: 50vw;
+    height: 50vh;
+}
+
+.mobilePopupBG{
+    display: none;
+    position: absolute;
+    background-color: #00000081;
+    z-index: 1000;
+    width: 100vw;
+    height: 100vh;
+}
+
+@media only screen and (max-device-width:480px) {
+    .mobilePopup { display: block; }
+    .mobilePopupBG { display: block; }
+} 
