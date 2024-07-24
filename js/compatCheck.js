@@ -14,7 +14,6 @@ window.addEventListener("load", (event) => {
 });
   
 
-
 function detectMobile() {
     const toMatch = [
         /Android/i,

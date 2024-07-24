@@ -16,7 +16,7 @@ var primSwatch = document.querySelector('#primColor');
 var brushSize = 1;
 
 var z = 1;
-var width = 16, height = 16;
+var width = 64, height = 64;
 // container.style.width = width*2+1+"px";
 // container.style.height = height*2+1+"px";
 

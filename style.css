@@ -16,6 +16,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Raleway', sans-serif;
+    /* font-family: "Tiny5", sans-serif; */
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
@@ -27,11 +28,15 @@ body {
     display: flex;
     flex-direction: column;
     /* max-width: 100%; */
-    max-height: 100vmin;
+    max-height: 100vh;
+    height: 100vh;
+    width: 100vw;
 }
 .main-box{
     display: flex;
     flex-direction: row;
+    width: 100vw;
+    height:95vh;
 }
 .left-box{
     display: flex;
@@ -40,7 +45,7 @@ body {
 .right-box{
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 40vw;
     max-width: 100%;
     background-color: var(--dark1);
     padding: 20px;
@@ -54,8 +59,8 @@ body {
     display: flex;
     flex-direction: row;
     background-color: var(--dark1);
-    height: 5vmin;
-    max-height: 5vmin;
+    height: 5vh;
+    max-height: 5vh;
     z-index: 1;
 }
 .toolbar{
@@ -85,10 +90,10 @@ body {
 
 #render-window{
     overflow: auto;
-    width: 800px;
-    height: 500px;
+    width: 60vw;
+    height: 70vh;
     max-width: 100%;
-    max-height: 100%;
+    /* max-height: 100%; */
     /* width: 75vmax;
     height: 50vmin; */
     background-color: var(--canvasbg);
@@ -121,8 +126,8 @@ body {
     display: flex;
     flex-direction: column;
     background-color: var(--dark1);
-    height: 25vmin;
-    max-height: 25vmin;
+    height: 25vh;
+    /* max-height: 25vh; */
     /* max-width: 800px; */
     padding-left: 20px;
     padding-right: 20px;
@@ -315,6 +320,7 @@ body {
     background-color: #000000;
     width: 50vw;
     height: 50vh;
+    padding: 10px;
 }
 
 .mobilePopupBG{
@@ -326,7 +332,3 @@ body {
     height: 100vh;
 }
 
-/* @media only screen and (max-device-width:480px) {
-    .mobilePopup { display: block; }
-    .mobilePopupBG { display: block; }
-}  */
