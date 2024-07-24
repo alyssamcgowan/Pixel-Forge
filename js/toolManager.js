@@ -5,6 +5,13 @@ var erase = false;
 var frameDelay = 1000;
 var playingAnim = false;
 
+// var toolbuttons = document.querySelector(".tool");
+
+$( ".tool" ).click(function() {
+    console.log("tool click");
+    $( ".tool" ).css('background-color', 'var(--dark2)');
+  });
+
 // function pointer(){
 //     $('#render-window').css("cursor", "auto");
 // }

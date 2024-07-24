@@ -456,11 +456,11 @@
 
             function paletteElementClick(e) {
                 if (e.data && e.data.ignore) {
-                    set($(e.target).closest(".sp-thumb-el").data("color"));
+                    // set($(e.target).closest(".sp-thumb-el").data("color"));
                     move();
                 }
                 else {
-                    set($(e.target).closest(".sp-thumb-el").data("color"));
+                    // set($(e.target).closest(".sp-thumb-el").data("color"));
                     move();
 
                     // If the picker is going to close immediately, a palette selection

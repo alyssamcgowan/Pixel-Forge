@@ -331,7 +331,7 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
     border:solid 2px transparent;
 }
 .sp-palette .sp-thumb-el:hover, .sp-palette .sp-thumb-el.sp-thumb-active {
-    border-color: orange;
+    border-color: white;
 }
 .sp-thumb-el {
     position:relative;

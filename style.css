@@ -83,6 +83,9 @@ body {
 .tool:hover{
     background-color: var(--dark2);
 }
+/* .tool:focus{
+    background-color: var(--dark2);
+} */
 
 .tool-buttons{
     display: flex;
