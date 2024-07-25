@@ -3,6 +3,7 @@ var defaultLayer = document.querySelector('#layer1');
 var addButton = document.querySelector('.add-layer');
 // var layer = document.querySelector('.layer');
 var currentLayer = "layer1"
+// var visButton = document.querySelector("visibility");
 
 // var imgDct = {"layer1": [[new ImageData(width,height), document.querySelector('#canvas1'), document.querySelector('#canvas1').getContext("2d")]]}; // img data, canvas, ctx
 var imgDct = {"layer1": new Layer(1)}
@@ -31,6 +32,19 @@ window.addEventListener("load", (event) => {
     });
 });
 
+function toggleVis(){
+    var visButton = document.querySelector(".visibilityicon");
+    if(visButton.classList.contains("fa-eye")){
+        visButton.classList.remove("fa-eye");
+        visButton.classList.add("fa-eye-slash");
+    }else{
+        visButton.classList.remove("fa-eye-slash");
+        visButton.classList.add("fa-eye");
+    }
+    //  **********************************************ADD LAYER VISIBILITY CODE HERE *************************
+    // playingAnim = !playingAnim;
+    // loopFrames();
+}
 
 function makeNewLayer(){
     // console.log(layerContainer.children.length);

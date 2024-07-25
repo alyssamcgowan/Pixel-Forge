@@ -202,6 +202,13 @@ body {
     right: 0px;
     background-color: #00ff6e;
 }
+.add{
+    background-color: #ffffff00;
+    border-radius: 5px;
+}
+.add:hover{
+    background-color: var(-dark2);
+}
 
 .layer-container{
     overflow: auto;
@@ -209,11 +216,6 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     height: 100%;
-}
-
-.add-layer{
-    background-color: #ffffff00;
-    border-radius: 5px;
 }
 
 .layer{
@@ -226,10 +228,11 @@ body {
     width: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #888;
   }
   ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: #f1f1f1;
+    scrollbar-shadow-color: #aaa;
   }  
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
@@ -257,11 +260,6 @@ body {
     border:none;
 }
 
-
-.add-frame{
-    background-color: #ffffff00;
-    border-radius: 5px;
-}
 .frame-container{
     overflow: auto;
     display: flex;
@@ -307,6 +305,13 @@ body {
 
 #fps{
     background-color:  var(--dark1);
+    max-width: 20px;
+}
+
+#fps::-webkit-outer-spin-button,
+#fps::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .dimInput{

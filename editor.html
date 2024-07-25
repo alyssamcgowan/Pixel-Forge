@@ -162,7 +162,7 @@
 
                 <div class="frame-box">
                     <p>Frames 
-                        <button class="add-frame"><i class="fa-solid fa-plus"></i></button>
+                        <button class="add-frame add"><i class="fa-solid fa-plus"></i></button>
                         <i class="fa-solid fa-backward" onclick="backward()"></i>
                         <i class="fa-solid fa-play" onclick="play()" id="playbutton"></i>
                         <i class="fa-solid fa-forward" onclick="forward()"></i>
@@ -194,12 +194,12 @@
             <div class="right-box">
 
                 <div class="layer-box">
-                    <p>Layers <i class="fa-solid fa-layer-group"> </i> <button class="add-layer"><i class="fa-solid fa-plus"></i></button></p>
+                    <p>Layers <i class="fa-solid fa-layer-group"> </i> <button class="add-layer add" ><i class="fa-solid fa-plus"></i></button></p>
                     
                 
                     <div class="layer-container">
                         <div id="layer1" class="layer">
-                            <button class="visibility"><i class="fa-regular fa-eye"></i></button>
+                            <button class="visibility"><i class="visibilityicon fa-regular fa-eye" onclick="toggleVis(this)"></i></button>
                             <div class="thumbnail-div"><canvas id="canvas1" class="layer-thumbnail"></canvas></div>
                             <input class="layer-name" value="Layer 1"></input>
                         </div>
