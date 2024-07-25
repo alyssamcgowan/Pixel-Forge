@@ -7,7 +7,7 @@ var currentLayer = "layer1"
 
 // var imgDct = {"layer1": [[new ImageData(width,height), document.querySelector('#canvas1'), document.querySelector('#canvas1').getContext("2d")]]}; // img data, canvas, ctx
 var imgDct = {"layer1": new Layer(1)}
-var hiddenLayers = [];
+var hiddenLayers = {};
 
 defaultLayer.style.border = "2px solid white";
 
@@ -37,13 +37,18 @@ function toggleVis(){
     if(visButton.classList.contains("fa-eye")){
         visButton.classList.remove("fa-eye");
         visButton.classList.add("fa-eye-slash");
+        //add to hiddenlayers
+        hiddenLayers[visButton.parentNode.parentNode.id] = 1;
     }else{
         visButton.classList.remove("fa-eye-slash");
         visButton.classList.add("fa-eye");
+        //remove from hidden layers
+        delete hiddenLayers[visButton.parentNode.parentNode.id];
     }
     //  **********************************************ADD LAYER VISIBILITY CODE HERE *************************
-    // playingAnim = !playingAnim;
-    // loopFrames();
+    //rerender layers probably
+    console.log(hiddenLayers);
+    rerenderLayers();
 }
 
 function makeNewLayer(){
@@ -53,7 +58,7 @@ function makeNewLayer(){
     div.setAttribute("id", i);
 
     button = document.createElement("button");
-    button.innerHTML = "<i class='fa-regular fa-eye'></i>";
+    button.innerHTML = "<i class='visibilityicon fa-regular fa-eye' onclick='toggleVis(this)'></i>";
     button.classList.add('visibility');
     div.appendChild(button);
 

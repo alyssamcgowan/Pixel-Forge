@@ -2,7 +2,8 @@
 var currentTool = 0;
 var picker = false;
 var erase = false;
-var frameDelay = 1000;
+var fps = document.getElementById("fps").value;
+var frameDelay = 1000/fps;
 var playingAnim = false;
 
 // var toolbuttons = document.querySelector(".tool");

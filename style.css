@@ -258,6 +258,7 @@ body {
 .visibility{
     background-color: #00000000;
     border:none;
+    width: 30px;
 }
 
 .frame-container{
