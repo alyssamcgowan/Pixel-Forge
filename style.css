@@ -184,8 +184,6 @@ body {
     height: 20px;
     background-color: black;
     border: 2px solid #aaaaaa;
-
-    
 }
 #primColor{
     background-color: black;
@@ -222,6 +220,7 @@ body {
     border: 2px solid #000000;
     display: flex;
     justify-content: row;
+    align-items: center;
 }
 
 ::-webkit-scrollbar {
@@ -254,11 +253,15 @@ body {
     background-color: #00000000;
     border: none;
     font-family: 'Raleway', sans-serif;
+    height: 20px;
 }
 .visibility{
     background-color: #00000000;
     border:none;
     width: 30px;
+}
+.visibilityicon:hover{
+    color: #bbb;
 }
 
 .frame-container{

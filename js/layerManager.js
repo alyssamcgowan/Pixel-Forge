@@ -32,22 +32,21 @@ window.addEventListener("load", (event) => {
     });
 });
 
-function toggleVis(){
-    var visButton = document.querySelector(".visibilityicon");
+function toggleVis(visButton){
+    layerbox = visButton.parentNode.parentNode;
     if(visButton.classList.contains("fa-eye")){
         visButton.classList.remove("fa-eye");
         visButton.classList.add("fa-eye-slash");
         //add to hiddenlayers
-        hiddenLayers[visButton.parentNode.parentNode.id] = 1;
+        hiddenLayers[layerbox.id] = 1;
+        layerbox.style.backgroundColor = "var(--dark1)";
     }else{
         visButton.classList.remove("fa-eye-slash");
         visButton.classList.add("fa-eye");
         //remove from hidden layers
-        delete hiddenLayers[visButton.parentNode.parentNode.id];
+        delete hiddenLayers[layerbox.id];
+        layerbox.style.backgroundColor = "#00000000";
     }
-    //  **********************************************ADD LAYER VISIBILITY CODE HERE *************************
-    //rerender layers probably
-    console.log(hiddenLayers);
     rerenderLayers();
 }
 

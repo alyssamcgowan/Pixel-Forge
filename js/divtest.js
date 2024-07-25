@@ -134,8 +134,8 @@ function displayCanvToDiv(d){
   layerList = Array.prototype.slice.call( layerContainer.children).reverse()
   for(let l = 0; l < layerList.length; l++ ){ //for every layer
     // img = imgDct[layerList[l].id][currentFrameNum][0];
-
-    if(!(l in hiddenLayers)){
+    var lyrname = "layer" + l;
+    if(!(lyrname in hiddenLayers)){
 
       img = imgDct[layerList[l].id].getImgObjs()[currentFrameNum]
       var p = (d.id)*4;
