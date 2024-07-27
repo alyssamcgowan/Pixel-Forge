@@ -47,6 +47,8 @@ function toggleVis(visButton){
         delete hiddenLayers[layerbox.id];
         layerbox.style.backgroundColor = "#00000000";
     }
+    // console.log(hiddenLayers);
+    clear();
     rerenderLayers();
 }
 
@@ -65,7 +67,7 @@ function makeNewLayer(){
     div2.classList.add('thumbnail-div');
 
     c = makeCanvas(i)
-    console.log(c)
+    // console.log(c)
     // c.getContext("2d").scale(5,5)
     div2.appendChild(c);
     div.appendChild(div2);
@@ -113,14 +115,16 @@ function makeCanvas(i){
 }
 
 function select(d){
-    console.log(d.id);
+    // console.log(d.id);
     document.querySelector("#"+currentLayer).style.border = "2px solid black";
     d.style.border = "2px solid white";
     currentLayer = d.id;
 }
 
 function rerenderLayers(){
-    for (var d = 0; d < container.children.length; d++){
+    layerList = Array.prototype.slice.call( layerContainer.children).reverse();
+    console.log("layer list: " + layerList[0].id);
+    for (var d = 0; d < container.children.length; d++){ //for each pixel?
         displayCanvToDiv(container.children[d]);
     }
 

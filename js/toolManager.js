@@ -2,8 +2,7 @@
 var currentTool = 0;
 var picker = false;
 var erase = false;
-var fps = document.getElementById("fps").value;
-var frameDelay = 1000;
+var frameDelay = 166;
 var playingAnim = false;
 
 // var toolbuttons = document.querySelector(".tool");
@@ -36,7 +35,7 @@ function eyeDropper(){
 }
 
 function updateFPS(){
-    fps = document.getElementById("fps").value;
+    var fps = document.getElementById("fps").value;
     frameDelay = Math.floor(1000/fps);
 }
 
