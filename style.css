@@ -395,6 +395,26 @@ body {
   
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {display: block;}
-  
-  /* Change the background color of the dropdown button when the dropdown content is shown */
-  /* .dropdown:hover .dropbtn {} */
+
+.menupopup{
+    display: none;
+    position: absolute;
+    background-color: var(--dark2);
+    left: 15vw;
+    top: 15vh;
+    color: var(--text);
+    width: 30vw;
+    height: 30vh;
+    z-index: 1000;
+    font-size: 15px;
+}
+.popupheader{
+    background-color: var(--dark1);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.xbutton{
+    background-color: #00000000;
+    border: none;
+}

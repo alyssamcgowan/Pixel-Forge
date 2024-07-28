@@ -39,6 +39,18 @@
           
     </div>
 
+    <script src="js/popupManager.js"></script>
+    <div>
+
+        <div id="newFilePopup" class="menupopup">
+            <div class="popupheader">
+                New File 
+                <a onclick="xout(this)"> <button class="xbutton"><i class="fa-regular fa-rectangle-xmark"></i></button> </a>
+            </div>
+        </div>
+
+    </div>
+
 
 
     <div class="ui-main">
@@ -52,7 +64,7 @@
             <div class="dropdown">
                 <button class="topButton">File</button>
                 <div class="dropdown-content">
-                  <a >New</a>
+                  <a onclick="newPopup()">New</a>
                   <a >Open</a>
                   <a >Export</a>
                   <a >Preferences</a>
@@ -234,7 +246,7 @@
         
     </div>
     
-    
+
     <script src="js/frameManager.js"></script>
     <script src="js/exportManager.js"></script>
 
