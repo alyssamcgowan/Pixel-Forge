@@ -1,8 +1,8 @@
 $(function(){
-    $('#newFilePopup').draggable({
+    $('.menupopup').draggable({
       handle: ".popupheader"
   });
-    $('#newFilePopup').resizable();
+    $('.menupopup').resizable();
   
 });
 
@@ -31,5 +31,10 @@ function preferencesPopup(){
 
 function adjustmentsPopup(){
     popup = document.getElementById("adjustmentsPopup");
+    popup.style.display = "block";
+}
+
+function sizePopup(){
+    popup = document.getElementById("sizePopup");
     popup.style.display = "block";
 }

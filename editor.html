@@ -98,6 +98,31 @@
             </div>
         </div>
 
+        <div id="sizePopup" class="menupopup">
+            <div class="popupheader">
+                Canvas Size
+                <a onclick="xout(this)"> <button class="xbutton"><i class="fa-regular fa-rectangle-xmark"></i></button> </a>
+            </div>
+
+            <div class="popupcontent">
+                <div>
+                    width:<input type="number" class="dimInput" id="width" name="width" min="1" value="64" onchange="changeWidth()">
+                    height: <input type="number" class="dimInput" id="height" name="height" min="1" value="64" onchange="changeHeight()">
+                </div>
+
+                <div>
+                    <button onclick="cancel(this)">Cancel</button>
+                    <button>Ok</button>
+                </div>
+                
+            </div>
+        </div>
+
+
+
+
+
+
     </div>
 
 
@@ -136,14 +161,14 @@
                 <div class="dropdown-content">
                   <a onclick="adjustmentsPopup()">Adjustments</a>
                   <a >Crop</a>
-                  <a >Canvas Size</a>
+                  <a onclick="sizePopup()">Canvas Size</a>
                 </div>
             </div>
 
             <div class="dropdown">
                 <button class="topButton">Layer</button>
                 <div class="dropdown-content">
-                  <a >New Layer</a>
+                  <a onclick="makeNewLayer()">New Layer</a>
                   <a >Duplicate Layer</a>
                   <a >Delete Layer</a>
                   <a >Merge Down</a>
@@ -177,12 +202,6 @@
                   <a >Search Features</a>
                   <a href="https://github.com/alyssamcgowan/Pixel-Forge" target="_blank">GitHub</a>
                 </div>
-            </div>
-
-
-            <div>
-                width:<input type="number" class="dimInput" id="width" name="width" min="1" value="64" onchange="changeWidth()">
-                height: <input type="number" class="dimInput" id="height" name="height" min="1" value="64" onchange="changeHeight()">
             </div>
 
         </div>
