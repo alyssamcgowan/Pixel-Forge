@@ -29,6 +29,7 @@
     <script src='js/spectrum.js'></script>
     <link rel='stylesheet' href='spectrum.css' />
 
+    <script src='js/compatCheck.js'></script>
     <div class="mobilePopupBG" id="mobilePopupBG">
 
         <div class="mobilePopup" id="mobilePopup">
@@ -46,6 +47,54 @@
             <div class="popupheader">
                 New File 
                 <a onclick="xout(this)"> <button class="xbutton"><i class="fa-regular fa-rectangle-xmark"></i></button> </a>
+            </div>
+
+            <div class="popupcontent">
+                <div>
+                    width:<input type="number" class="dimInput" id="width" name="width" min="1" value="64" onchange="changeWidth()">
+                    height: <input type="number" class="dimInput" id="height" name="height" min="1" value="64" onchange="changeHeight()">
+                </div>
+                
+                <div>
+                    <button onclick="cancel(this)">Cancel</button>
+                    <button>Create File</button>
+                </div>
+                
+            </div>
+        </div>
+
+
+        <div id="preferencesPopup" class="menupopup">
+            <div class="popupheader">
+                Preferences
+                <a onclick="xout(this)"> <button class="xbutton"><i class="fa-regular fa-rectangle-xmark"></i></button> </a>
+            </div>
+
+            <div class="popupcontent">
+
+                <div>
+                    <button onclick="cancel(this)">Cancel</button>
+                    <button>Apply</button>
+                    <button>Ok</button>
+                </div>
+                
+            </div>
+        </div>
+
+        <div id="adjustmentsPopup" class="menupopup">
+            <div class="popupheader">
+                Adjustments
+                <a onclick="xout(this)"> <button class="xbutton"><i class="fa-regular fa-rectangle-xmark"></i></button> </a>
+            </div>
+
+            <div class="popupcontent">
+
+                <div>
+                    <button onclick="cancel(this)">Cancel</button>
+                    <button>Apply</button>
+                    <button>Ok</button>
+                </div>
+                
             </div>
         </div>
 
@@ -67,7 +116,7 @@
                   <a onclick="newPopup()">New</a>
                   <a >Open</a>
                   <a >Export</a>
-                  <a >Preferences</a>
+                  <a onclick="preferencesPopup()">Preferences</a>
                 </div>
             </div>
 
@@ -85,7 +134,7 @@
             <div class="dropdown">
                 <button class="topButton">Image</button>
                 <div class="dropdown-content">
-                  <a >Adjustments</a>
+                  <a onclick="adjustmentsPopup()">Adjustments</a>
                   <a >Crop</a>
                   <a >Canvas Size</a>
                 </div>

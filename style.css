@@ -407,12 +407,20 @@ body {
     height: 30vh;
     z-index: 1000;
     font-size: 15px;
+    button{
+        background-color: var(--dark1);
+    }
 }
 .popupheader{
     background-color: var(--dark1);
     padding: 10px;
     display: flex;
     justify-content: space-between;
+}
+.popupcontent{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .xbutton{
     background-color: #00000000;
