@@ -63,6 +63,7 @@
             </div>
         </div>
 
+
         <div id="exportPopup" class="menupopup">
             <div class="popupheader">
                 Export
@@ -73,12 +74,12 @@
                 
                 
                 <div>
-
-                    <button class ="export" onclick="makeVideo()">Export Video</button>
-                    <a href="" download> download video </a>
+                    File Name: <input type="text" class="" id="filenameinput" name="filename" value="image" onchange="changeFileName()">
+                    <br>
 
                     <button onclick="cancel(this)">Cancel</button>
-                    <button>Export</button>
+                    <button>Export Current Frame as Image</button>
+                    <button class ="export" onclick="makeVideo()">Export as Video</button>
                 </div>
                 
             </div>

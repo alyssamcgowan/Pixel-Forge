@@ -1,7 +1,8 @@
 var storedFrames = [];
 const offscreen = new OffscreenCanvas(width, height);
 const offscreenctx = offscreen.getContext("2d");    
-const testcanvas = document.querySelector('#testcanvas');
+// const testcanvas = document.querySelector('#testcanvas');
+var filename = "image";
 
 async function makeVideo(){
     console.log("export clicked");
@@ -28,12 +29,15 @@ async function makeVideo(){
 
    
 
-    for (f in frames){
+    for (f in frames){ //for every frame
+
+        //encode finalized image of the frame
+
         for (layer in imgDct){
             if(!(layer in hiddenLayers)){
                 layerdata = imgDct[layer].getImgObjs()[f];
                 offscreenctx.putImageData(layerdata, 0, 0);
-                testcanvas.putImageData(layerdata, 0, 0);
+                // testcanvas.putImageData(layerdata, 0, 0);
             }
             
         }
@@ -66,8 +70,10 @@ async function makeVideo(){
     
     videoWriter.complete().then(function(webMBlob) {
         // $("video").attr("src", URL.createObjectURL(webMBlob));
-        $("a").attr("href", URL.createObjectURL(webMBlob));
-        console.log(URL.createObjectURL(webMBlob))
+        url = URL.createObjectURL(webMBlob);
+        downloadFile(url, filename + ".webp");
+        // $("a").attr("href", URL.createObjectURL(webMBlob));
+        // console.log(URL.createObjectURL(webMBlob))
     });
 
 }
@@ -87,7 +93,7 @@ async function mergeImgData(f){
     for (let i = 0; i < width*height; i++){
         color = $("#"+ i).css("background-color")
         color = tinycolor(color).toRgb();
-        console.log(i, color)
+        // console.log(i, color)
         imgdata.data[i*4] = color["r"] 
         imgdata.data[i*4+1] = color["g"]
         imgdata.data[i*4+2] = color["b"]
@@ -110,10 +116,14 @@ async function blobToDataURL(blob, callback) {
 }
 
 function downloadFile(url, filename) {
-    const anchor = document.createElement('a');
+    const anchor = document.createElement('a'); //anchor is the temp link element
     anchor.href = url;
     anchor.download = filename;
     document.body.appendChild(anchor);
     anchor.click();
     document.body.removeChild(anchor);
+}
+
+function changeFileName(){
+    filename = document.getElementById("filenameinput").value;
 }

@@ -420,7 +420,8 @@ body {
 .popupcontent{
     display:flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
+    padding: 10px;
 }
 .xbutton{
     background-color: #00000000;
