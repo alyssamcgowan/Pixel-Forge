@@ -24,6 +24,11 @@ function newPopup(){
     popup.style.display = "block";
 }
 
+function exportPopup(){
+    popup = document.getElementById("exportPopup");
+    popup.style.display = "block";
+}
+
 function preferencesPopup(){
     popup = document.getElementById("preferencesPopup");
     popup.style.display = "block";

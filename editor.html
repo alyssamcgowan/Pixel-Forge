@@ -63,6 +63,27 @@
             </div>
         </div>
 
+        <div id="exportPopup" class="menupopup">
+            <div class="popupheader">
+                Export
+                <a onclick="xout(this)"> <button class="xbutton"><i class="fa-regular fa-rectangle-xmark"></i></button> </a>
+            </div>
+
+            <div class="popupcontent">
+                
+                
+                <div>
+
+                    <button class ="export" onclick="makeVideo()">Export Video</button>
+                    <a href="" download> download video </a>
+
+                    <button onclick="cancel(this)">Cancel</button>
+                    <button>Export</button>
+                </div>
+                
+            </div>
+        </div>
+
 
         <div id="preferencesPopup" class="menupopup">
             <div class="popupheader">
@@ -131,8 +152,7 @@
 
         <div class="top-box">
             <img class="logo" src="img/img-home/logowtext.png">
-            <!-- <button class ="export" onclick="makeVideo()">Export Video</button> -->
-            <!-- <a href="" download> download video </a> -->
+            
             
 
             <div class="dropdown">
@@ -140,7 +160,7 @@
                 <div class="dropdown-content">
                   <a onclick="newPopup()">New</a>
                   <a >Open</a>
-                  <a >Export</a>
+                  <a onclick="exportPopup()">Export</a>
                   <a onclick="preferencesPopup()">Preferences</a>
                 </div>
             </div>

@@ -5,11 +5,13 @@ const testcanvas = document.querySelector('#testcanvas');
 
 async function makeVideo(){
     console.log("export clicked");
+    console.log(imgDct);
 
     // mergeImgData(0);
 
     frames = imgDct["layer1"].getImgObjs()
 
+    //initialize web writer
     var videoWriter = new WebMWriter({
         quality: 0.95,    // WebM image quality from 0.0 (worst) to 0.99999 (best), 1.00 (VP8L lossless) is not supported
         fileWriter: null, // FileWriter in order to stream to a file instead of buffering to memory (optional)
@@ -25,11 +27,17 @@ async function makeVideo(){
     });
 
    
+
     for (f in frames){
         for (layer in imgDct){
-            offscreenctx.putImageData(imgDct[layer].getImgObj()[f], 0, 0)
-            testcanvas.putImageData(imgDct[layer].getImgObj()[f], 0, 0)
+            if(!(layer in hiddenLayers)){
+                layerdata = imgDct[layer].getImgObjs()[f];
+                offscreenctx.putImageData(layerdata, 0, 0);
+                testcanvas.putImageData(layerdata, 0, 0);
+            }
+            
         }
+
         // offscreenctx.putImageData(imgDct[0].getImgObj()[f], 0, 0)
         // mergeImgData(f);
         
@@ -40,8 +48,6 @@ async function makeVideo(){
         await offscreen.convertToBlob({type: "image/webp", quality: 0.99}).then(function(blob) {
             imgBlob = blob
         });
-
-        console.log("test", imgBlob)
 
         // await handleImgBlob(imgBlob);
         await new Promise( (resolve) => {
@@ -64,8 +70,8 @@ async function makeVideo(){
         console.log(URL.createObjectURL(webMBlob))
     });
 
-
 }
+
 
 async function mergeImgData(f){
     offscreenctx.clearRect(0, 0, offscreen.width, offscreen.height);
@@ -103,4 +109,11 @@ async function blobToDataURL(blob, callback) {
     a.readAsDataURL(blob);
 }
 
-
+function downloadFile(url, filename) {
+    const anchor = document.createElement('a');
+    anchor.href = url;
+    anchor.download = filename;
+    document.body.appendChild(anchor);
+    anchor.click();
+    document.body.removeChild(anchor);
+}
