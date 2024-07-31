@@ -33,18 +33,18 @@ async function makeVideo(){
 
         //encode finalized image of the frame
 
-        for (layer in imgDct){
+        for (layer in imgDct){ //bad attempt at combining all layers
             if(!(layer in hiddenLayers)){
                 layerdata = imgDct[layer].getImgObjs()[f];
                 offscreenctx.putImageData(layerdata, 0, 0);
                 // testcanvas.putImageData(layerdata, 0, 0);
             }
-            
         }
 
-        // offscreenctx.putImageData(imgDct[0].getImgObj()[f], 0, 0)
-        // mergeImgData(f);
+        //will need merge all layers into one image and write to offscreen canvas
+        mergeImgData(f); 
         
+
         var imgBlob;
         // offscreen.convertToBlob().then((blob) => 
         //     handleImgBlob(blob, storedFrames)
@@ -84,28 +84,45 @@ async function mergeImgData(f){
     // for (layer in imgDct){
     //     offscreenctx.putImageData(imgDct[layer].getImgObjs()[f], 0,0);
     // }
-    imgdata = new ImageData(width, height);
+    imgdata = new ImageData(width, height); // cummulative layer data
     data = imgdata.data;
-    for (l in imgDct){
-        
+
+    //APPROACH 1: COLLECT IMAGEDATA AND MERGE TOGETHER PROGRAMMATICALLY
+    for (l in imgDct){ //for all layers, get the imgdata object for frame f
+        limgdata = imgDct[l].getImgObjs()[f];
+        ldata = limgdata.data;
+
+        for (var d = 0; d < container.children.length; d++){ //for each pixel
+            //additive combination
+            if (ldata[d*4 + 3] == 1){
+                data[d*4] = ldata[d*4];
+                data[d*4 + 1] = ldata[d*4 + 1];
+                data[d*4 + 2] = ldata[d*4 + 2];
+            }
+            //    THIS IS WHERE ALPHA CHANNEL BLENDING SHOULD GO
+            // if(ldata[d*4 + 3] > 0){
+
+            // }
+        }
     }
 
-    for (let i = 0; i < width*height; i++){
-        color = $("#"+ i).css("background-color")
-        color = tinycolor(color).toRgb();
-        // console.log(i, color)
-        imgdata.data[i*4] = color["r"] 
-        imgdata.data[i*4+1] = color["g"]
-        imgdata.data[i*4+2] = color["b"]
-        data[i*4+3] = 255//color["a"]
-        // data[pixel+3] =color["a"]
-    }
-    console.log(imgdata.data)
+    //APPROACH 2: SCRAPE PIXEL COLORS DIRECTLY FROM UI CANVAS (not ideal when there are multiple frames)
+    // for (let i = 0; i < width*height; i++){
+    //     color = $("#"+ i).css("background-color")
+    //     color = tinycolor(color).toRgb();
+    //     // console.log(i, color)
+    //     imgdata.data[i*4] = color["r"] 
+    //     imgdata.data[i*4+1] = color["g"]
+    //     imgdata.data[i*4+2] = color["b"]
+    //     data[i*4+3] = 255//color["a"]
+    //     // data[pixel+3] =color["a"]
+    // }
+    // console.log(imgdata.data)
     offscreenctx.putImageData(imgdata, 0,0);
 
 
-    testcanvas = document.querySelector('#testcanvas').getContext('2d');
-    testcanvas.putImageData(offscreenctx.getImageData(0, 0, offscreen.width, offscreen.height), 0, 0);
+    // testcanvas = document.querySelector('#testcanvas').getContext('2d');
+    // testcanvas.putImageData(offscreenctx.getImageData(0, 0, offscreen.width, offscreen.height), 0, 0);
     return offscreenctx.getImageData(0, 0, offscreen.width, offscreen.height);
 }
 

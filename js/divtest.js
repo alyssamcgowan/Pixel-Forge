@@ -130,20 +130,16 @@ function putColor(id, color){
   imgDct[currentLayer].updateThumbnail(img);
 }
 
-function displayCanvToDiv(d){
+function displayCanvToDiv(d){ // writes one pixel from html canvas to ui
   layerList = Array.prototype.slice.call( layerContainer.children).reverse()
   for(let l = 0; l < layerList.length; l++ ){ //for every layer
     // img = imgDct[layerList[l].id][currentFrameNum][0];
     var lyrname = layerList[l].id;
     if(!( lyrname in hiddenLayers)){
 
-      img = imgDct[layerList[l].id].getImgObjs()[currentFrameNum]
-      var p = (d.id)*4;
+      img = imgDct[layerList[l].id].getImgObjs()[currentFrameNum] // image object
+      var p = (d.id)*4; 
       // console.log(tinycolor({r:img.data[p], g:img.data[p+1], b:img.data[p+2]}));
-      
-      // if (img.data[p+3]!=0){
-        // d.style.backgroundColor = tinycolor({r:img.data[p], g:img.data[p+1], b:img.data[p+2], a:img.data[p+3]});
-      // }
       
       if (  img.data[p+3]!=0 || ( img.data[p+3]==0 && (l==0 ||  (l != 0 && imgDct[layerList[l-1].id].getImgObjs()[currentFrameNum].data[p+3] == 0)))){
         d.style.backgroundColor = tinycolor({r:img.data[p], g:img.data[p+1], b:img.data[p+2], a:img.data[p+3]});
